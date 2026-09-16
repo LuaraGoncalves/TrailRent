@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const querystring = require("querystring");
 const equipamentoRepository = require("./repositories/equipamentoRepository");
+const equipamentoRoutes = require("./routes/equipamentoRoutes");
 
 const porta = 3000;
 const usuarioCorreto = "aluno";
@@ -132,8 +133,12 @@ function arquivoPublico(res, caminho) {
   enviar(res, 200, fs.readFileSync(arquivo), tipos[extensao] || "text/plain; charset=utf-8");
 }
 
-const servidor = http.createServer((req, res) => {
+const servidor = http.createServer(async (req, res) => {
   const url = new URL(req.url, "http://localhost:" + porta);
+
+  if (await equipamentoRoutes(req, res, url)) {
+    return;
+  }
 
   if (req.method === "GET" && url.pathname === "/") {
     paginaInicial(res);
