@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - TrailRent</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>TrailRent</h1>
+      <p>Acesso aos detalhes dos equipamentos</p>
+    </div>
+    <nav>
+      <a href="/">Início</a>
+    </nav>
+  </header>
+
+  <main class="conteudo pequeno">
+    <section class="formulario">
+      <h2>Entrar</h2>
+      <p class="erro">{{mensagem}}</p>
+
+      <form action="/login" method="POST">
+        <input type="hidden" name="next" value="{{next}}">
+
+        <label for="usuario">Usuário</label>
+        <input id="usuario" name="usuario" type="text" required>
+
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" required>
+
+        <button class="botao" type="submit">Acessar</button>
+      </form>
+
+      <p class="ajuda">Usuário: aluno | Senha: 1234</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrailRent</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>TrailRent</h1>
+      <p>Aluguel de equipamentos para trilhas, camping e esportes de aventura</p>
+    </div>
+    <nav>
+      <a href="/login">Entrar</a>
+      <a href="/sair">Sair</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <section class="apresentacao">
+      <h2>Equipamentos disponíveis</h2>
+      <p>Escolha um item para ver as informações completas e calcular o valor do aluguel.</p>
+    </section>
+
+    <section class="lista">
+      {{equipamentos}}
+    </section>
+  </main>
+</body>
+</html>

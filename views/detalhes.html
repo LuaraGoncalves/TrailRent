@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{nome}} - TrailRent</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>TrailRent</h1>
+      <p>Detalhes do equipamento</p>
+    </div>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sair">Sair</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <section class="detalhes">
+      <div class="texto-detalhes">
+        <h2>{{nome}}</h2>
+        <p>{{descricao}}</p>
+
+        <div class="informacoes">
+          <p><strong>Categoria:</strong> {{categoria}}</p>
+          <p><strong>Nível físico:</strong> {{nivel}}</p>
+          <p><strong>Preço por diária:</strong> R$ {{preco}}</p>
+          <p><strong>Unidades disponíveis:</strong> {{unidades}}</p>
+        </div>
+      </div>
+
+      <div class="calculadora">
+        <h3>Calcular aluguel</h3>
+
+        <label for="dias">Quantidade de dias</label>
+        <input id="dias" type="number" min="{{minimo}}" value="{{minimo}}">
+
+        <p>Período mínimo: {{minimo}} dia(s)</p>
+        <p class="total">Total: R$ <span id="total">0,00</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.precoDiaria = {{precoValor}};
+  </script>
+  <script src="/public/calculo.js"></script>
+</body>
+</html>

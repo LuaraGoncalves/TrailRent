@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f7f4;
+  color: #1f2d24;
+}
+
+.topo {
+  background: #2f6b4f;
+  color: white;
+  padding: 24px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.topo h1 {
+  margin: 0 0 6px;
+  font-size: 34px;
+}
+
+.topo p {
+  margin: 0;
+}
+
+.topo nav {
+  display: flex;
+  gap: 12px;
+}
+
+.topo a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.conteudo {
+  width: 84%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.pequeno {
+  max-width: 520px;
+}
+
+.apresentacao {
+  margin-bottom: 24px;
+}
+
+.apresentacao h2 {
+  margin-bottom: 8px;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card,
+.formulario,
+.detalhes {
+  background: white;
+  border: 1px solid #d7e1da;
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(22, 58, 39, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.botao {
+  display: inline-block;
+  background: #df7d32;
+  color: white;
+  text-decoration: none;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botao:hover {
+  background: #c76822;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario input,
+.calculadora input {
+  padding: 11px;
+  border: 1px solid #b9c9be;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.erro {
+  color: #b3261e;
+  min-height: 20px;
+}
+
+.ajuda {
+  color: #526359;
+  font-size: 14px;
+}
+
+.detalhes {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.texto-detalhes h2 {
+  margin-top: 0;
+}
+
+.informacoes {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.informacoes p {
+  background: #eef5f0;
+  margin: 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.calculadora {
+  background: #eef5f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.calculadora h3 {
+  margin-top: 0;
+}
+
+.calculadora label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.calculadora input {
+  width: 100%;
+}
+
+.total {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2f6b4f;
+}
+
+@media (max-width: 850px) {
+  .lista,
+  .detalhes,
+  .informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .conteudo {
+    width: 92%;
+  }
+
+  .topo {
+    padding: 20px 4%;
+  }
+
+  .topo h1 {
+    font-size: 28px;
+  }
+
+  .topo nav {
+    width: 100%;
+  }
+
+  .topo a {
+    text-align: center;
+    flex: 1;
+  }
+}
