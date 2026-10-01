@@ -12,9 +12,12 @@ function dadosInvalidos(dados) {
     !dados.categoria ||
     !dados.nivel ||
     dados.preco === undefined ||
+    Number(dados.preco) <= 0 ||
     dados.minimo === undefined ||
+    Number(dados.minimo) < 1 ||
     !dados.retirada ||
-    dados.unidades === undefined;
+    dados.unidades === undefined ||
+    Number(dados.unidades) < 0;
 }
 
 function montarEquipamento(dados) {

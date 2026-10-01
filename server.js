@@ -85,6 +85,11 @@ function paginaLogin(res, mensagem, next) {
   enviar(res, 200, html, "text/html; charset=utf-8");
 }
 
+function paginaCadastro(res) {
+  const html = lerArquivo("views/cadastro.html");
+  enviar(res, 200, html, "text/html; charset=utf-8");
+}
+
 async function paginaDetalhes(req, res, id) {
   if (!estaLogado(req)) {
     redirecionar(res, "/login?next=/equipamento/" + id);
@@ -147,6 +152,11 @@ const servidor = http.createServer(async (req, res) => {
 
   if (req.method === "GET" && url.pathname === "/login") {
     paginaLogin(res, "", url.searchParams.get("next"));
+    return;
+  }
+
+  if (req.method === "GET" && url.pathname === "/cadastro") {
+    paginaCadastro(res);
     return;
   }
 
